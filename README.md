@@ -1,0 +1,5 @@
+# naufalafif2015.github.io
+Website Naufalafif2015
+
+Terms Of Condition:
+1. I AM NOT GONNA GIVE YOU PERMISSION TO USE THIS WEBSITE ASSETS FOR YOU OWN PROJECTS
