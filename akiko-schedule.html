@@ -1,29 +1,8 @@
 <!DOCTYPE html>
-<html lang="Indonesian">>
+<html lang="Indonesian">
 <head>
-    <title>Customize HTML</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-        }
-
-        #custom-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .custom-input {
-            position: absolute;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Akiko Schedule</title>
+    <link rel="stylesheet" type="text/css" href="styles_akiko-schedule.css">
     <script>
         function updateBackground() {
             var color = document.getElementById('background-color').value;
@@ -39,24 +18,54 @@
         }
     </script>
 </head>
+
 <body>
-    <div id="custom-background"></div>
-    <input type="color" id="background-color" onchange="updateBackground()">
-    <br>
-    <label for="x-coordinate">X-coordinate:</label>
-    <input type="number" id="x-coordinate" onchange="updateCustomInputPosition()">
-    <br>
-    <label for="y-coordinate">Y-coordinate:</label>
-    <input type="number" id="y-coordinate" onchange="updateCustomInputPosition()">
-    <br>
-    <input type="text" id="custom-input" class="custom-input" value="day: string;">
-    <br>
-    <input type="text" id="custom-input" class="custom-input" value="online: boolean;">
-    <br>
-    <input type="text" id="custom-input" class="custom-input" value="title: string;">
-    <br>
-    <input type="text" id="custom-input" class="custom-input" value="date: string;">
-    <br>
-    <input type="text" id="custom-input" class="custom-input" value="time: string;">
+    <div class="split left">
+      <div class="centered">
+        <img src="img_avatar2.png" alt="Avatar woman" id="custom-background">
+        <h2>Jane Flex</h2>
+        <p>Some text.</p>
+      </div>
+    </div>
+
+    <div class="split right">
+      <div class="centered">
+          <input type="image" class="custom-input" value="Title Livestream">
+          <br>
+          <input type="month" class="custom-input" value="day: string;">
+          <br>
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+          <br>
+          <input type="text" class="custom-input" value="Title Livestream">
+          <input type="checkbox" class="custom-input" value="True">
+          <input type="datetime-local" class="custom-input" value="">
+        <img src="img_avatar.png" alt="Avatar man">
+        <h2>John Doe</h2>
+        <p>Some text here too.</p>
+      </div>
+    </div>
 </body>
 </html>
