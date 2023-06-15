@@ -2,69 +2,146 @@
 <html lang="Indonesian">
 <head>
     <title>Akiko Schedule</title>
-    <link rel="stylesheet" type="text/css" href="styles_akiko-schedule.css">
-    <script>
-        function updateBackground() {
-            var color = document.getElementById('background-color').value;
-            document.body.style.backgroundColor = color;
-        }
-
-        function updateCustomInputPosition() {
-            var x = document.getElementById('x-coordinate').value;
-            var y = document.getElementById('y-coordinate').value;
-            var inputElement = document.getElementById('custom-input');
-            inputElement.style.left = x + 'px';
-            inputElement.style.top = y + 'px';
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="style dan javascript/style_akiko-schedule.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="style dan javascript/javascript_akiko-schedule.js"></script>
 </head>
+
 
 <body>
     <div class="split left">
-      <div class="centered">
-        <img src="img_avatar2.png" alt="Avatar woman" id="custom-background">
-        <h2>Jane Flex</h2>
-        <p>Some text.</p>
+        <div class="image-container">
+            <div class="centered">
+            <img src="static/images/base.png" alt="base image">
+            <img src="static/images/img-online/1Senin.png" alt="1Senin" id="1Senin">
+            <img src="static/images/img-online/2Selasa.png" alt="2Selasa" id="2Selasa">
+            <img src="static/images/img-online/3Rabu.png" alt="3Rabu" id="3Rabu">
+            <img src="static/images/img-online/4Kamis.png" alt="4Kamis" id="4Kamis">
+            <img src="static/images/img-online/5Jumat.png" alt="5Jumat" id="5Jumat">
+            <img src="static/images/img-online/6Sabtu.png" alt="6Sabtu" id="6Sabtu">
+            <img src="static/images/img-online/7Minggu.png" alt="7Minggu" id="7Minggu">
+                <div class="date">
+                <div class="container-week">
+                    <div id="inputValue0"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText1"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber1"></div>
+                    <div id="month1"></div>
+                    <div id="time1"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue1"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText2"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber2"></div>
+                    <div id="month2"></div>
+                    <div id="time2"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue2"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText3"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber3"></div>
+                    <div id="month3"></div>
+                    <div id="time3"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue3"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText4"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber4"></div>
+                    <div id="month4"></div>
+                    <div id="time4"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue4"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText5"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber5"></div>
+                    <div id="month5"></div>
+                    <div id="time5"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue5"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText6"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber6"></div>
+                    <div id="month6"></div>
+                    <div id="time6"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue6"></div>
+                </div>
+                <div class="container">
+                    <div id="dayOfWeekText7"></div>
+                    <a>, </a>
+                    <div id="dayOfWeekNumber7"></div>
+                    <div id="month7"></div>
+                    <div id="time7"></div>
+                </div>
+                <div class="container-text">
+                    <div id="inputValue7"></div>
+                </div>
+                </div>
+            </div>
+        </div>
       </div>
-    </div>
-
     <div class="split right">
-      <div class="centered">
-          <input type="image" class="custom-input" value="Title Livestream">
+      <div class="lefted">
+          <h2 class="custom-heading">AI Akiko Control Panels - Livestream Schedule</h2>
+          <input type="text" class="custom-input week" placeholder="Number of the Weekend" oninput="handleInput(this, 'inputValue0')">
           <br>
-          <input type="month" class="custom-input" value="day: string;">
+          <br>
+          <input type="text" class="custom-input channel" placeholder="Channel Livestream" oninput="placeholderInput(this)" value="https://www.youtube.com/@naufalgaming2018">
           <br>
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
+          <h2 class="custom-heading">Senin <input type="checkbox" id="1Senin-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue1')">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
+          <input type="datetime-local" id="datetimeInput1" onchange="getDateTime(1)">
+          <h2 class="custom-heading">Selasa <input type="checkbox" id="2Selasa-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue2')">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
+          <input type="datetime-local" id="datetimeInput2" onchange="getDateTime(2)">
+          <h2 class="custom-heading">Rabu <input type="checkbox" id="3Rabu-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue3')">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
           <br>
-          <input type="text" class="custom-input" value="Title Livestream">
-          <input type="checkbox" class="custom-input" value="True">
-          <input type="datetime-local" class="custom-input" value="">
-        <img src="img_avatar.png" alt="Avatar man">
-        <h2>John Doe</h2>
-        <p>Some text here too.</p>
+          <input type="datetime-local" id="datetimeInput3" onchange="getDateTime(3)">
+          <h2 class="custom-heading">Kamis <input type="checkbox" id="4Kamis-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue4')">
+          <br>
+          <br>
+          <input type="datetime-local" id="datetimeInput4" onchange="getDateTime(4)">
+          <h2 class="custom-heading">Jumat <input type="checkbox" id="5Jumat-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue5')">
+          <br>
+          <br>
+          <input type="datetime-local" id="datetimeInput5" onchange="getDateTime(5)">
+          <h2 class="custom-heading">Sabtu <input type="checkbox" id="6Sabtu-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue6')">
+          <br>
+          <br>
+          <input type="datetime-local" id="datetimeInput6" onchange="getDateTime(6)">
+          <h2 class="custom-heading">Minggu <input type="checkbox" id="7Minggu-toggle" class="custom-input" checked></h2>
+          <input type="text" class="custom-input" placeholder="Judul Livestream" oninput="handleInput(this, 'inputValue7')">
+          <br>
+          <br>
+          <input type="datetime-local" id="datetimeInput7" onchange="getDateTime(7)">
       </div>
     </div>
 </body>

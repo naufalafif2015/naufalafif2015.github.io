@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+
+
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('path/to/times-new-roman.ttf');
+}
+
+body {
+    background-color: #0D1E0C;
+    color: #ffffff;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* BAGIAN BUAT TEXT TANGGAL DAN LAIN LAINNYA */
+.date {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 8;
+  padding-top: 0px;
+  padding-left: 484px;
+  padding-right: 155px;
+  width: 400px;
+}
+
+.container {
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 15.8px;
+  position: flex;
+}
+
+.container-week {
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  flex-direction: row;
+  font-size: 56px;
+  color: #ffffff;
+  padding-top: 5.8px;
+  padding-left: 67.8px;
+  position: flex;
+}
+
+.container-text {
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 20.3px;
+  position: flex;
+}
+
+.container > div {
+  margin-left: 5px;
+  z-index: 8;
+}
+
+
+/* BUAT CUSTOM INPUT BIAR BISA BEBAS */
+.custom-input {
+    font-family: 'Times New Roman', sans-serif;
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.week {
+    width: 180px;
+}
+
+.channel {
+    width: 350px;
+}
+
+.placeholder-on {
+  color: transparent;
+}
+
+
+/* BUAT CUSTOM TEXT */
+.custom-heading {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.82em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Control the left side */
+.left {
+  background-color: #111;
+}
+
+/* Buat Imagenya Biar bisa Overlap */
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-container img:nth-child(1) {
+  z-index: 0;
+}
+.image-container img:nth-child(2) {
+  z-index: 1;
+}
+.image-container img:nth-child(3) {
+  z-index: 2;
+}
+.image-container img:nth-child(4) {
+  z-index: 3;
+}
+.image-container img:nth-child(5) {
+  z-index: 4;
+}
+.image-container img:nth-child(6) {
+  z-index: 5;
+}
+.image-container img:nth-child(7) {
+  z-index: 6;
+}
+.image-container img:nth-child(8) {
+  z-index: 7;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #111C10;
+}
+
+/* BUAT CHECKBOXNYA BIAR BISA CUSTOM */
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #a83232;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Define the custom checkbox style when it's checked */
+input[type="checkbox"]:checked {
+    background-color: #32a852;
+}
+
+/* Add the checkmark symbol using Unicode */
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode character for checkmark */
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    top: -13px;
+    left: 2px;
+}
+
+/* Add the checkmark symbol using Unicode */
+input[type="checkbox"]::before {
+    content: '\2716'; /* Unicode character for Xmark */
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+
+
+/* If you want the content centered horizontally and vertically */
+.lefted {
+  position: absolute;
+  font-family: 'Times New Roman', sans-serif;
+  left: 20px;
+  text-align: left;
+}
+
+.centered {
+  position: absolute;
+  font-family: 'Times New Roman', sans-serif;
+  left: 20px;
+  text-align: centered;
+  top: 10px;
+}
