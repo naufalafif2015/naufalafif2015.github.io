@@ -1,393 +1,123 @@
-  /* TEXT PALING ATAS HEADERNYA GITU */
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: rgba(51, 51, 51, 0.466);
-  overflow: hidden;
-  position: absolute;
-  z-index: 11;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+   /* BUAT BAGIAN ATAS HEADER */
+header{
+  z-index: 1;
   display: flex;
-  width:100%;
-}
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  width:100%;
-  transition: 0.3s;
-}
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-  background-color: #ddd;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  transition: 0.3s;
-}
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-  background-color: #0896a0;
-  color: white;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-  /* MAIN TEXT BUAT BAGIAN TENGAH */
-*{
-  box-sizing: border-box;
-  font-family:'sans-serif';
-}
-
-.title{
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #f7ecec;
   width: 100%;
-  color: #f2f2f2;
-  font-size: 10vh;
-  margin-top: 80px;
-  text-align: center;
-  text-indent: 0;
-  z-index: 10;
-  position:absolute;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
 }
 
-
-
-.textleftmiddle{
-  padding: 18vh 20vh;
-  text-align: left;
-  text-indent: 0;
-  z-index: 10;
-  max-width: 100%;
-  position:absolute;
-  top:0;
-  left:0;
+header a{
+  color: #f7ecec;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-.text_trakteer{
-  padding: 18vh 20vh;
-  text-align: left;
-  text-indent: 0;
-  z-index: 10;
-  max-width: 50%;
-  position:absolute;
-  top:0;
-  left:0;
+.icon {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  align-items: center;
 }
 
-.textcenter{
-  text-align: center;
-  text-indent: 0;
-  z-index: 10;
-  max-width: 100%;
-  position:absolute;
+.panel {
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.textcentermiddle{
-  text-align: center;
-  text-indent: 0;
-  z-index: 10;
-  max-width: 600px;
-  position:absolute;
-  margin-top: 200px;
+.padding {
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
-
-
-.textblack{
-  color: #042b5a;
-  z-index: 10;
-}
-
-.textwhite{
-  color: #f2f2f2;
-  z-index: 10;
-}
-
-
-
-.backgroundnews{
-  background-image: url("https://cdn.discordapp.com/attachments/1000277106804150324/1070498692987097178/image.png");
-  max-width: 100%;
-  height: 525px;
-  position: relative;
+.progress-text {
+  width: 100px;
+  border-radius: 50%;
+  align-items: center;
   display: flex;
-  justify-content: center;
-  z-index: 4;
+  justify-content: left;
 }
 
-.background_community{
-  background-image: url("https://cdn.discordapp.com/attachments/1000277106804150324/1070498692987097178/image.png");
-  max-width: 100%;
-  height: 150vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
+.container-big-skip {
+height: 300px;
 }
 
-
-
-
-.table_gamedev_kiri{
-  width: 55%;
-  padding: 18vh 20vh;
-  text-align: left;
-  text-indent: 0;
-  z-index: 10;
-  max-width: 100%;
-  position:absolute;
-  top:0;
-  left:0;
+.container-medium-skip {
+height: 90px;
 }
 
-.table_gamedev_kanan{
-  padding: 18vh 30vh;
-  z-index: 10;
-  max-width: 100%;
-  position:absolute;
-  top:0;
-  right:0;
-  transition: 0.3s;
+.container-small-skip {
+height: 30px;
 }
 
-.table_gamedev_kanan:hover{
-  scale: 1.1;
-  transition: 0.3s;
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: #4d4d4d;
+  --bs-popover-header-bg: #4d4d4d;
+  --bs-popover-header-color: #f7ecec;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.5rem;
 }
-
-
-
-.table_community_row{
-  display: flexbox;
-  flex-direction: row;
-}
-
-.table_community_column{
-  display: flexbox;
-  flex-direction: column;
-}
-
-
-
-
-
-
-
-
-.trakteer_button {
-  background-color: #f2f2f2;
-  border: 2px solid #f2f2f2;
-  color: #042b5a;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.trakteer_button:hover {
-  background-color: transparent; 
-  color: #f2f2f2; 
-  text-align: center;
-  border: 2px solid #f2f2f2;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-
-
-.fans_art_button {
-  background-color: #f2f2f2;
-  border: 2px solid #f2f2f2;
-  color: #042b5a;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.fans_art_button:hover {
-  background-color: transparent; 
-  color: #f2f2f2; 
-  text-align: center;
-  border: 2px solid #f2f2f2;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-
-
-
-
-
-
-
-
-
 
   /* BUAT BAGIAN BASIC */
-html{
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
-  background-color: #4568b2;
+  color: #f7ecec;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter';
 }
 
-body{
-  margin: auto;
+body.light-mode {
+  background-color: #dfdfdf;
+  color: #120808;
 }
 
-h1{
-  font-family:sans-serif;
-  font-size: 3vw; 
-  z-index: 10;
-}
-
-h2{
-  font-family:sans-serif;
-  font-size: 2vw; 
-  z-index: 10;
-}
-
-h3{
-  font-family:sans-serif;
-  font-size: 1vw; 
-  z-index: 10;
-}
-
-img{
-  cursor: pointer;
-}
-
-footer{
-  text-align: center;
-  text-indent: 0;
-  z-index: 10;
-}
-
-
-
-
-
-  /* BUAT BACKGROUND PARALAXX */
-.image {
-  position: absolute;
-  bottom: 0px;
-
-}
-
-.parallax_1{
-  max-width: 100%;
-  max-height: 100%;
+body.light-mode .panel {
+  background-color: #ffffff;
+  box-shadow: 0 0 30px 30px rgba(0, 0, 0, 0.116);
   position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: -1;
-  overflow: hidden;
 }
 
-.parallax_border{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  max-width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #1919199d, transparent);
-  z-index: 1;
+body.light-mode header {
+  background-color: #7271a8;
 }
 
+body.light-mode header a:hover {
+  color: #a5a3ff;
+}
 
-.parallax_2 {
-  margin-bottom: -12vh;
-  max-width: 100%;
-  max-height: 100%;
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f7ecec;
+}
+
+body.dark-mode .panel {
+  background-color: #2d2d2d;
+  box-shadow: 
+    0 0 30px 30px rgba(255, 255, 255, 0.116),
+    0 0 30px 5px rgba(255, 255, 255, 0.3),
+    0 0 30px 10px rgba(255, 255, 255, 0.2),
+    0 0 30px 15px rgba(255, 255, 255, 0.1);
   position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  overflow: hidden;
 }
 
-.parallax_2::before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  max-width: 100%;
-  height: 25%;
-  background: linear-gradient(to top, #191919, transparent);
-  z-index: 100;
+body.dark-mode header {
+  background-color: #43426b;
 }
 
-.parallax_3 {
-  margin-bottom: -10vh;
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-  overflow: hidden;
+body.dark-mode header a:hover {
+  color: #8c8bc9;
 }
-
-.parallax_4 {
-  margin-bottom: -10vh;
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
-  overflow: hidden;
-}
-
-.parallax_5 {
-  background-image: url("https://cdn.discordapp.com/attachments/1000277106804150324/1070361659778015305/2022-08-29_17.56.04.png");
-  max-width: 100%;
-  height: 60vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 5;
-  overflow: hidden;
-}
-
-.parallax_6 {
-  background-image: url("https://cdn.discordapp.com/attachments/1000277106804150324/1074987919707742209/Animator_United_Z.png");
-  max-width: 100%;
-  height: 60vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 6;
-  overflow: hidden;
-}
-
-
-
-
-
-
-
-/* BUAT VIDEO YOUTUBE 
-.latest_news_video_1{
-  position: absolute;
-  z-index: 20;
-  display: flex;
-  width:100%;
-}
-
-.latest_news_video_1 a:hover {
-  background-color: #ddd;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-}
-    
-/* Add a color to the active/current link 
-.latest_news_video_1 a.active {
-  background-color: #04AA6D;
-  color: white;
-  cursor: pointer;
-} 

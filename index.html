@@ -1,159 +1,397 @@
 <!DOCTYPE html>
-<html lang="Indonesian">
+<html lang="english">
   <head>
     <title>NA Website</title>
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/1000277106804150324/1070289613509365792/Logo_Autumn.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/images/Logo/Logo-Autumn-old.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style dan javascript/style_index.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.10/plyr.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="style dan javascript/java_index.js"></script>
+    <script src="https://cdn.plyr.io/3.6.10/plyr.js"></script>
   </head>
-    <body>
+
+  <audio id="music">
+    <source src="audio/Void.wav" type="audio/wav">
+    <source src="audio/Void.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <body class="light-mode">
     <div>
+
       <header>
-        <div class="topnav">
-          <a class="active" href="#home">Home</a>
-          <a href="/game">Game</a>
-          <a href="/shop">Shop</a>
-          <a href="/community">Community</a>
-          <a href="/team">Team</a>
-          <a href="/contact">Contact</a>
-          <a href="/secrets">Secrets</a>
+        <div class="container-fluid" id="navbar-scroll">
+          <div class="row align-items-center justify-content-center flex-wrap">
+            <div class="col-12 col-md-auto text-center">
+              <a href="#scroll-1" class="d-block h5 h-md-4">Home</a>
+            </div>
+            <div class="col-12 col-md-auto text-center">
+              <a href="#scroll-2" class="d-block h5 h-md-4">Animations</a>
+            </div>
+            <div class="col-12 col-md-auto text-center">
+              <a href="#scroll-3" class="d-block h5 h-md-4">Game Projects</a>
+            </div>
+            <div class="col-12 col-md-auto text-center">
+              <a href="#scroll-4" class="d-block h5 h-md-4">My Team</a>
+            </div>
+            <div class="col-12 col-md-auto text-center">
+              <a href="#scroll-5" class="d-block h5 h-md-4">Command</a>
+            </div>
+            <div class="col-12 col-md-auto text-center">
+              <div class="d-flex justify-content-center align-items-center">
+                <button id="theme-toggle" class="btn btn-secondary h5 h-md-4">Toggle Night Mode</button>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
-      <div class="title">
-        HI SAYA NAUFAL WEBSITE MASIH TAHAP PEMBUATAN
-      </div>
-      <div class="parallax_1">
-        <video autoplay muted loop id="video1">
-          <source src="https://cdn.discordapp.com/attachments/1000277106804150324/1070681696510418944/Awal_Masuk.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  <div class="parallax_border">
-  </div>
-    <div class="parallax_2">
-      <video autoplay muted loop id="video2">
-        <source src="https://cdn.discordapp.com/attachments/1000277106804150324/1070744289505714216/Game_Developer.mp4" type="video/mp4">
-      </video>
-      <div class="table_gamedev_kiri">
-        <div class="textleft">
-          <div class="textwhite">
-            <h1>Game Developer dan Animator Minecraft</h1>
-            <h3>Awal mula Cuman Hobi, sekarang menjadi Passion!</h3>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="parallax_3">
-      <video autoplay muted loop id="video3">
-        <source src="https://cdn.discordapp.com/attachments/1000277106804150324/1070741533583753338/Trakteer.mp4" type="video/mp4">
-      </video>
-      <div class="text_trakteer">
-        <div class="textwhite">
-          <a href="https://trakteer.id/naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070527742715637833/image.png" alt="Trakteer" style="width:75%;height:75%;"></h1></a>
-          <h3>Merchandise, Alpha Test, Skin di Animasi & Masih banyak lagi!</h3>
-          <a href="https://trakteer.id/naufalafif2015" style="text-decoration: none;"><h1 class="trakteer_button">GO TO STORE</h1></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="backgroundnews">
-      <div class= "textcenter">
-        <div class="textblack">
-          <h1>LATEST NEWS</h1>
-          <h3>Tetap Terhubung dengan berita terbaru Naufalafif2015!</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLxeYeJ-1QneoN7MYFcdHlCt-x6GBvN_z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <div class="latest_news_video_1">
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="parallax_4">
-      <video autoplay muted loop id="video4">
-        <source src="https://cdn.discordapp.com/attachments/1000277106804150324/1070742368195719198/NATale_Saga.mp4" type="video/mp4">
-      </video>
-      <div class="textcenter">
-        <div class="textwhite">
-          <h1>NATALE SAGA</h1>
-          <h3>Series Video Terbaik oleh Naufalafif2015!</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLxeYeJ-1QncphByhQa6QKku67Obx0Vn2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="parallax_5">
-      <div class="textcenter">
-        <div class="textwhite">
-          <h1>LIVESTREAM VIDEOS</h1>
-          <h3>Mulai dari Devlog, sampai buat maps bareng!</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLxeYeJ-1QnfWgu1AnxEsBq52BCrepmvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="background_community">
-      <div class= "textcenter">
-        <div class="textblack">
-          <h1>COMMUNITY</h1>
-          <h2>Naufalafif2015 juga mempunyai fans dan juga komunitas dengan ide dan passion yang tinggi. Kalian bisa menjadi salah satunya.</h2>
-          <div class="table_community_column">
-            <h2>Naufalafif2015 (Animation)</h2>
-            <h2>Naufalgaming2018 (Gaming Channel)</h2>  
-          </div>
-            <div class="table_community_column">
-              <div class="table_community_row">
-                <a href="https://www.youtube.com/@Naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521367985922119/2560px-YouTube_Logo_2017.png" alt="Youtube" style="width:15%;height:15%;"></a>
-                <a href="https://discord.gg/7wzuknT"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521627030335628/636e0b52aa9e99b832574a53_full_logo_blurple_RGB.png" alt="Discord" style="width:15%;height:15%;"></a>
-                <a href="https://solo.to/naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521561590804590/Solo20Text20Logo20Color.png" alt="SoloTo" style="width:15%;height:15%;"></a>
-                <a href="https://www.tiktok.com/@naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521446528450580/1200px-TikTok_logo.png" alt="Tiktok" style="width:15%;height:15%;"></a>
-                <a href="https://www.instagram.com/naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521745280335872/59-590993_follow-us-on-instagram-logo-png-clipart-1024x365.png" alt="Instagram" style="width:15%;height:15%;"></a>
-                <a href="https://twitter.com/naufalafif2015"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521988847779890/logo-Twitter.png" alt="twitter" style="width:15%;height:15%;"></a>  
+      <div data-bs-spy="scroll" data-bs-target="#navbar-scroll" data-bs-root-margin="0px 0px -25%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0"></div>
+        <div class="container-big-skip"></div>
+        <div id="scroll-1"class="container"> 
+          <div class="panel"> 
+            <div class="padding row align-items-center">
+              <div class="col"></div>
+              <div class="col-sm-8">
+                <img src="static/images/Logo/Logo-Autumn-old.png" class="mx-auto d-block" style="width: 300px; height: 300px; border-radius: 50%;" alt="Logo Naufalafif2015">
               </div>
-              <div class="table_community_row">
-                <a href="https://www.youtube.com/channel/UC7HO3vPsQz5gt3vppfxCwEA"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521367985922119/2560px-YouTube_Logo_2017.png" alt="Youtube" style="width:15%;height:15%;"></a>
-                <a href="https://www.tiktok.com/@naufalafif2018"><img src="https://cdn.discordapp.com/attachments/1000277106804150324/1070521446528450580/1200px-TikTok_logo.png" alt="Tiktok" style="width:15%;height:15%;"></a>  
+              <div class="col">
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-secondary" onclick="toggleAudio()">Start The Party</button>
+                </div>
+              </div>
+              <h3>
+                Naufalafif2015
+                <small class="text-muted">Animator & Game Developer with +7 years experience</small>
+              </h3>
+              <p class="lead"><em>Since 7th grade, I've had the potential to create some good art.</em></p>
+            </div>
+          </div>
+
+          <div class="container-small-skip"></div>
+          <div class="panel padding">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">My Main Youtube Channel, with primary focus on quality animation.</p>
+                    <p class="card-text"><a href="https://www.youtube.com/@naufalafif2015" class="btn btn-primary" target="_blank">1st Youtube</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 14 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">My Streaming Youtube Channel, with primary focus on streaming.</p>
+                    <p class="card-text"><a href="https://www.youtube.com/@NaufalStreaming2015" class="btn btn-primary" target="_blank">2nd Youtube</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 4 hours ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Link to Support this creator, it's isnt much but you can support me by using this link.</p>
+                    <p class="card-text"><a href="https://trakteer.id/naufalafif2015" class="btn btn-primary">Trakteer</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 19 mins ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Link to my instagram, you can follow me there.</p>
+                    <p class="card-text"><a href="https://www.instagram.com/naufalafif2015" class="btn btn-primary">Instagram</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 21 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Shorts compilation of Animation and even stream clips.</p>
+                    <p class="card-text"><a href="https://www.tiktok.com/@naufalafif2015" class="btn btn-primary">Tiktok</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 12 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">My english account for sharing my creations.</p>
+                    <p class="card-text"><a href="https://twitter.com/naufalafif2015" class="btn btn-primary">Twitter</a></p>
+                    <div class="card-footer"><small class="text-muted">Last updated 5 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-small-skip"></div>
+          <div id="scroll-2" class="panel padding"> 
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="d-flex flex-column gap-3">
+                  <div class="text-center">
+                    <h3>
+                      My Experience
+                      <small class="text-muted">+7 years</small>
+                    </h3>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="progress flex-grow-1">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                    <div class="flex-shrink-0 padding progress-text">
+                      <h6 class="mb-0">Animation</h6>
+                      <h6 class="mb-3"></h6>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="progress flex-grow-1">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div class="flex-shrink-0 padding progress-text">
+                      <h6 class="mb-0">Gdscript</h6>
+                      <h6 class="mb-3"></h6>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="progress flex-grow-1">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                    </div>
+                    <div class="flex-shrink-0 padding progress-text">
+                      <h6 class="mb-0">Python</h6>
+                      <h6 class="mb-3"></h6>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="progress flex-grow-1">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                    </div>
+                    <div class="flex-shrink-0 padding progress-text">
+                      <h6 class="mb-0">Music</h6>
+                      <h6 class="mb-3"></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="text-center">
+                  <h3>
+                    Animation
+                    <small class="text-muted">Reels</small>
+                  </h3>
+                  <p class="lead">All of my past contribution for other people listed here.</p>
+                  <div class="panel padding">
+                    <div class="text-center">
+                      <h3>Animation Playlist</h3>
+                      <div class="d-flex justify-content-center">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe 
+                          class="embed-responsive-item" 
+                          src="https://www.youtube-nocookie.com/embed/videoseries?si=ZR8msWEQw3d4Finr&amp;list=PLLxeYeJ-1Qnd_uk4p6r-9w-EWn-yzHiH0" 
+                          title="YouTube video player" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" 
+                          allowfullscreen>
+                          </iframe>
+                          <iframe 
+                          class="embed-responsive-item" 
+                          src="https://www.youtube-nocookie.com/embed/videoseries?si=ZR8msWEQw3d4Finr&amp;list=PLLxeYeJ-1Qnd_uk4p6r-9w-EWn-yzHiH0" 
+                          title="YouTube video player" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" 
+                          allowfullscreen>
+                          </iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-small-skip"></div>
+          <div class="panel padding"> 
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div id="scroll-3" class="col">
+                <div class="text-center">
+                  <h3>
+                    Projects
+                    <small class="text-muted">Cool Things</small>
+                  </h3>
+                  <p class="lead">My Current Project or even some website schedule that i made.</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="text-center">
+                  <h3>
+                    My Music
+                    <small class="text-muted">on youtube</small>
+                  </h3>
+                  <p class="lead">Try listen to my music, maybe you can find something you like.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-medium-skip"></div>
+          <div id="scroll-4" class="panel padding">
+            <div class="text-center">
+              <h3>
+                Meet Our Team
+                <small class="text-muted">Humans and AI</small>
+              </h3>
+              <p class="lead">
+                <em>Nothing crazy will ever happen with our team.</em>
+                <button type="button" class="btn btn-secondary"
+                data-bs-toggle="popover" data-bs-placement="right"
+                data-bs-custom-class="custom-popover"
+                data-bs-title="Nevermind..."
+                data-bs-content="It's So... Joe Over brothers. Nooooooo... 😭😭😭">
+                <em>Foreshadowing...</em>
+                </button>
+              </p>
+            </div>
+
+            <div class="container-small-skip"></div>
+            <div class="panel padding">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <dl class="row">
+                      <dt class="col-3">Naufal Afif</dt>
+                      <dd class="col-9">
+                        <p>Waddap ツ</p>
+                        <p>Insert some <mark>important</mark> and <outline>cool line</outline> that nobody care.</p>
+                      </dd>
+                      <dt class="col-3">Hobby</dt>
+                      <dd class="col-9">
+                        <p>Liked to use his spare time to make something better. For Example make an animation and streaming it simultaniously without wasting time</p>
+                      </dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-6 text-end">
+                    <img src="..." class="img-thumbnail" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-small-skip"></div>
+            <div class="panel padding">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <dl class="row">
+                      <dt class="col-3">Akiko</dt>
+                      <dd class="col-9">
+                        <p>Waddap ツ</p>
+                        <p>Insert some <mark>important</mark> and <outline>cool line</outline> that nobody care.</p>
+                      </dd>
+                      <dt class="col-3">Hobby</dt>
+                      <dd class="col-9">
+                        <p>Liked to use his spare time to make something better. For Example make an animation and streaming it simultaniously without wasting time</p>
+                      </dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-6 text-end">
+                    <img src="..." class="img-thumbnail" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container-small-skip"></div>
+          </div>  
+
+          <div class="container-medium-skip"></div>
+          <div id="scroll-5" class="panel padding">
+            <div class="text-center">
+              <h3>
+                Command
+                <small class="text-muted">helper</small>
+              </h3>
+              <p class="lead"><em>All List of Command for my livestreaming channel.</em></p>
+            </div>
+
+            <div class="container-small-skip"></div>
+          <div class="panel padding"> 
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Accordion Item #1
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Accordion Item #2
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Accordion Item #3
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="parallax_6">
-      <div class="textcentermiddle">
-        <div class="textwhite">
-          <h2>FANS ART</h2>
-          <h3>Semua hasil dari Animasi dan juga Gameku masih belum cukup jika saya belum menemukan fans art dari kalian.</h3>
-          <h3>Kalian bisa kirim dibawah ini, Jika kalian Punya</h3>
-          <a href="https://discord.com/invite/7wzuknT" style="text-decoration: none;"><h1 class="fans_art_button">KIRIM DISINI</h1></a>
+    <footer>
+      <div class="container-small-skip"></div> 
+      <div class="container"> 
+        <div class="panel">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </div>
-
-    <footer>
-      <h1>
-        NAUFALAFIF2015
-      </h1>
-      <h3>
-        Copyright © 2023 Naufalafif2015. All rights reserved. Game logo and Animation logo are trademarks of Naufalafif2015. This Website is in development.
-      </h3>
-      <h3>
-        Content presented subject to change.
-      </h3>
     </footer>
   </body>
 </html>
-
-
-
-<script type="text/javascript">
-  let parallax_1 = document.querySelector('.parallax_1')
-
-  window.onscroll = function(){
-    let Y = window.scrollY;
-
-    parallax_1.style.transform = 'translateY(' + Y/1.1 + 'px)';
-  }
-</script>
