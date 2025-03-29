@@ -1,3 +1,32 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Ignore PSD files
+*.psd
+
+# Ignore backup files
+*~.png
+
+# Ignore test files
+test.html
+
+# Ignore node_modules if you have any
+node_modules/
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore large video files (if you want to use CDN)
+video/*.mp4

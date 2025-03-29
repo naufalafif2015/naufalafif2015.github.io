@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./static/images/Logo/Logo-Autumn-old.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style dan javascript/style_index.css">
+    <link rel="stylesheet" type="text/css" href="script/index_css.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.10/plyr.css" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <script src="style dan javascript/java_index.js"></script>
+    <script src="script/index_js.js"></script>
     <script src="https://cdn.plyr.io/3.6.10/plyr.js"></script>
   </head>
 
   <audio id="music">
-    <source src="audio/Void.wav" type="audio/wav">
-    <source src="audio/Void.mp3" type="audio/mpeg">
+    <source src="audio/vibe.wav" type="audio/wav">
+    <source src="audio/vibe.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
@@ -23,31 +23,36 @@
     <div>
 
       <header>
-        <div class="container-fluid" id="navbar-scroll">
-          <div class="row align-items-center justify-content-center flex-wrap">
-            <div class="col-12 col-md-auto text-center">
-              <a href="#scroll-1" class="d-block h5 h-md-4">Home</a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link h5 h-md-4" href="#scroll-1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5 h-md-4" href="#scroll-2">Animations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5 h-md-4" href="#scroll-3">Game Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5 h-md-4" href="#scroll-4">My Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5 h-md-4" href="#scroll-5">Command</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button id="theme-toggle" class="btn btn-secondary h5 h-md-4">Toggle Night Mode</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-auto text-center">
-              <a href="#scroll-2" class="d-block h5 h-md-4">Animations</a>
-            </div>
-            <div class="col-12 col-md-auto text-center">
-              <a href="#scroll-3" class="d-block h5 h-md-4">Game Projects</a>
-            </div>
-            <div class="col-12 col-md-auto text-center">
-              <a href="#scroll-4" class="d-block h5 h-md-4">My Team</a>
-            </div>
-            <div class="col-12 col-md-auto text-center">
-              <a href="#scroll-5" class="d-block h5 h-md-4">Command</a>
-            </div>
-            <div class="col-12 col-md-auto text-center">
-              <div class="d-flex justify-content-center align-items-center">
-                <button id="theme-toggle" class="btn btn-secondary h5 h-md-4">Toggle Night Mode</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+        </nav>
+    </header>
 
       <div data-bs-spy="scroll" data-bs-target="#navbar-scroll" data-bs-root-margin="0px 0px -25%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0"></div>
         <div class="container-big-skip"></div>
@@ -56,18 +61,25 @@
             <div class="padding row align-items-center">
               <div class="col"></div>
               <div class="col-sm-8">
-                <img src="static/images/Logo/Logo-Autumn-old.png" class="mx-auto d-block" style="width: 300px; height: 300px; border-radius: 50%;" alt="Logo Naufalafif2015">
+                <div class="ratio ratio-1x1">
+                  <video id="loopVideo" class="rounded-circle" src="video/loop.mp4" autoplay loop muted playsinline></video>
+                  <video id="vibeVideo" class="rounded-circle" src="video/vibe.mp4" loop muted playsinline></video>
+                </div>
               </div>
               <div class="col">
                 <div class="d-flex justify-content-center">
-                  <button class="btn btn-secondary" onclick="toggleAudio()">Start The Party</button>
+                  <button id="startPartyBtn" class="btn btn-secondary" onclick="toggleAudio(); toggleVideos();">Start The Party</button>
                 </div>
               </div>
               <h3>
                 Naufalafif2015
                 <small class="text-muted">Animator & Game Developer with +7 years experience</small>
               </h3>
-              <p class="lead"><em>Since 7th grade, I've had the potential to create some good art.</em></p>
+              <p class="lead"><em>Since 7th grade, I've
+                <mark data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="with high power comes great curiosity 🗣️🔥">
+                  had the potential
+                </mark>
+                to create some good art.</em></p>
             </div>
           </div>
 
@@ -75,67 +87,105 @@
           <div class="panel padding">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://www.youtube.com/@naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/youtube1.jpg" class="card-img-top" alt="1st Channel Youtube">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Youtube Animation</a></p>
                     <p class="card-text">My Main Youtube Channel, with primary focus on quality animation.</p>
-                    <p class="card-text"><a href="https://www.youtube.com/@naufalafif2015" class="btn btn-primary" target="_blank">1st Youtube</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 14 days ago</small></div>
                   </div>
                 </div>
               </div>
 
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://www.youtube.com/@NaufalStreaming2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/youtube2.jpg" class="card-img-top" alt="2nd Channel Youtube">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Youtube Streaming</a></p>
                     <p class="card-text">My Streaming Youtube Channel, with primary focus on streaming.</p>
-                    <p class="card-text"><a href="https://www.youtube.com/@NaufalStreaming2015" class="btn btn-primary" target="_blank">2nd Youtube</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 4 hours ago</small></div>
                   </div>
                 </div>
               </div>
 
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://trakteer.id/naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/trakteer.jpg" class="card-img-top" alt="Trakteer">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Trakteer</a></p>
                     <p class="card-text">Link to Support this creator, it's isnt much but you can support me by using this link.</p>
-                    <p class="card-text"><a href="https://trakteer.id/naufalafif2015" class="btn btn-primary">Trakteer</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 19 mins ago</small></div>
                   </div>
                 </div>
               </div>
 
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://www.instagram.com/naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/instagram.jpg" class="card-img-top" alt="Instagram">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Instagram</a></p>
                     <p class="card-text">Link to my instagram, you can follow me there.</p>
-                    <p class="card-text"><a href="https://www.instagram.com/naufalafif2015" class="btn btn-primary">Instagram</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 21 days ago</small></div>
                   </div>
                 </div>
               </div>
 
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://www.tiktok.com/@naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/tiktok.jpg" class="card-img-top" alt="Tiktok">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Tiktok</a></p>
                     <p class="card-text">Shorts compilation of Animation and even stream clips.</p>
-                    <p class="card-text"><a href="https://www.tiktok.com/@naufalafif2015" class="btn btn-primary">Tiktok</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 12 days ago</small></div>
                   </div>
                 </div>
               </div>
 
               <div class="col">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
+                <div class="card" href="https://twitter.com/naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/twitter.jpg" class="card-img-top" alt="Twitter">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Twitter</a></p>
                     <p class="card-text">My english account for sharing my creations.</p>
-                    <p class="card-text"><a href="https://twitter.com/naufalafif2015" class="btn btn-primary">Twitter</a></p>
                     <div class="card-footer"><small class="text-muted">Last updated 5 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card" href="https://itch.io/naufalafif2015" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/itch.jpg" class="card-img-top" alt="Itch">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Itch</a></p>
+                    <p class="card-text">My itch.io account for sharing my games creations.</p>
+                    <div class="card-footer"><small class="text-muted">Last updated 16 days ago</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card" href="https://discord.gg/7wzuknT" target="_blank">
+                  <div class="card-img-container">
+                    <img src="static/images/socials/discord.jpg" class="card-img-top" alt="Discord">
+                  </div>
+                  <div class="card-body light-mode">
+                    <p class="card-text"><a class="btn btn-primary">Discord</a></p>
+                    <p class="card-text">My english account for sharing my creations.</p>
+                    <div class="card-footer"><small class="text-muted">Last updated 1 hour ago</small></div>
                   </div>
                 </div>
               </div>
@@ -264,10 +314,9 @@
               <p class="lead">
                 <em>Nothing crazy will ever happen with our team.</em>
                 <button type="button" class="btn btn-secondary"
-                data-bs-toggle="popover" data-bs-placement="right"
-                data-bs-custom-class="custom-popover"
-                data-bs-title="Nevermind..."
-                data-bs-content="It's So... Joe Over brothers. Nooooooo... 😭😭😭">
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="Nevermind, It's Joe Over 😭.">
                 <em>Foreshadowing...</em>
                 </button>
               </p>
@@ -281,17 +330,48 @@
                     <dl class="row">
                       <dt class="col-3">Naufal Afif</dt>
                       <dd class="col-9">
-                        <p>Waddap ツ</p>
-                        <p>Insert some <mark>important</mark> and <outline>cool line</outline> that nobody care.</p>
+                        <p>" Waddap ツ "</p>
+                        <p>Insert some
+                          <mark data-bs-toggle="tooltip" data-bs-title="Example: Mokel 🍕">
+                            important things
+                          </mark>
+                          with
+                          <span class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-title="Me Handsome 😎">
+                            cool tagline
+                          </span>
+                          that nobody even care about.
+                        </p>
                       </dd>
-                      <dt class="col-3">Hobby</dt>
+                      <dt class="col-3">Hobby ist</dt>
                       <dd class="col-9">
-                        <p>Liked to use his spare time to make something better. For Example make an animation and streaming it simultaniously without wasting time</p>
+                        <p>He liked to use his spare time to make something better. For example make an
+                          <mark data-bs-toggle="tooltip" data-bs-title="4BROTHERS SERANG!!! 🗣️🔥">
+                            animation
+                          </mark>
+                          and streaming it
+                          <mark data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Multitasking 😎😩💀">
+                            simultaniously
+                          </mark>
+                          without wasting time.</p>
+                      </dd>
+                      <dt class="col-3">Last Project</dt>
+                      <dd class="col-9">
+                        <p>Making a godot game for my livestreaming overlay,
+                          <span class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="*Laugh In Jawa Accent*">
+                            No pun intended.
+                          </span>
+                        </p>
                       </dd>
                     </dl>
                   </div>
                   <div class="col-md-6 text-end">
-                    <img src="..." class="img-thumbnail" alt="...">
+                    <div class="icon-talk">
+                      <img src="static/images/talk/naufal-silent.png" class="img-thumbnail img-fluid rounded-circle" alt="Naufal Silent">
+                      <img src="static/images/talk/naufal-talk.png" class="img-thumbnail hover-image img-fluid rounded-circle" alt="Naufal Talking">
+                      <div class="bubble-chat">
+                        <p class="right">Ajarin puhh v:</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -301,21 +381,48 @@
             <div class="panel padding">
               <div class="container-fluid">
                 <div class="row">
+                  <div class="col-md-6 text-start">
+                    <div class="icon-talk">
+                      <img src="static/images/talk/akiko-silent.png" class="img-thumbnail img-fluid rounded-circle" alt="Akiko Silent">
+                      <img src="static/images/talk/akiko-talk.png" class="img-thumbnail img-fluid hover-image rounded-circle" alt="Akiko Talking">
+                      <div class="bubble-chat">
+                        <p class="left">nah id eep lel ツ</p>
+                      </div>
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <dl class="row">
                       <dt class="col-3">Akiko</dt>
                       <dd class="col-9">
-                        <p>Waddap ツ</p>
-                        <p>Insert some <mark>important</mark> and <outline>cool line</outline> that nobody care.</p>
+                        <p>" Wha? oh... "</p>
+                        <p>Im gonna sleep ight now. Wat...?
+                          <mark data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="😤😤😤">
+                            It's afternoon?
+                          </mark>
+                          welp me
+                          <span class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="💤💤💤">
+                            want to sleep
+                          </span>
+                          anyway.
+                        </p>
                       </dd>
-                      <dt class="col-3">Hobby</dt>
+                      <dt class="col-3">Hobby ish</dt>
                       <dd class="col-9">
-                        <p>Liked to use his spare time to make something better. For Example make an animation and streaming it simultaniously without wasting time</p>
+                        <p>She liked to sleep
+                          <mark data-bs-toggle="tooltip" data-bs-title="Naufal Sleep at 3 o'clock in the morning 💀">
+                            better than Naufal.
+                          </mark>
+                          Or She like to
+                          <span class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Better call Naufal 📞🤨">
+                            wander around aimlessly
+                          </span>
+                          looking for something that isn't there yet.</p>
+                      </dd>
+                      <dt class="col-3">Lemon?</dt>
+                      <dd class="col-9">
+                        <p>Nahh i'm cooked 💀</p>
                       </dd>
                     </dl>
-                  </div>
-                  <div class="col-md-6 text-end">
-                    <img src="..." class="img-thumbnail" alt="...">
                   </div>
                 </div>
               </div>
@@ -328,47 +435,542 @@
             <div class="text-center">
               <h3>
                 Command
-                <small class="text-muted">helper</small>
+                <small class="text-muted">List</small>
               </h3>
               <p class="lead"><em>All List of Command for my livestreaming channel.</em></p>
             </div>
 
             <div class="container-small-skip"></div>
           <div class="panel padding"> 
-            <div class="accordion">
+            <div>
+              <h5>
+                LIVESTREAMING RULES 😎
+              </h5>
+              <br>
+            </div>
+            <div class="accordion accordion-flush" id="af">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    Accordion Item #1
+                <h2 class="accordion-header" id="fh1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                    +5 point per chat
                   </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1" data-bs-parent="#af">
                   <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    [🇮🇩] Kamu bisa mendapatkan <code>+5 Point</code> setiap kamu aktif ngechat di stream
+                    <br>
+                    [🇺🇸] You can get <code>+5 Points</code> every time you chat in the naufal stream
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                    Accordion Item #2
+                <h2 class="accordion-header" id="fh2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                    +40 point per donation (YT/Trakteer)
                   </button>
                 </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2" data-bs-parent="#af">
                   <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    [🇮🇩] Kamu bisa mendapatkan <code>+40 Point</code> setiap kamu donasi di livestreaming ini
+                    <br>
+                    [🇺🇸] You can get <code>+40 Points</code> every time you donate in the livestreaming
+                    <br>
+                    🎁 Donate at: <a href="https://trakteer.id/naufalafif2015">https://trakteer.id/naufalafif2015</a>
+                    <br> or donate at youtube: <a href="https://www.youtube.com/@NaufalStreaming2015">Youtube</a>
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    Accordion Item #3
+                <h2 class="accordion-header" id="fh3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                    Spam = 30 min timeout + Roll back Points to 0
                   </button>
                 </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3" data-bs-parent="#af">
                   <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    [🇮🇩] Kamu tidak bisa chat selama <code>30 menit</code>, dan point mu akan mengulang dari <code>0</code>
+                    <br>
+                    [🇺🇸] You can't chat for <code>30 minutes</code>, and your points will be reset to <code>0</code>
+                  </div>
+                </div>
+              </div>
+              <h5>
+                🛠️ HELP COMMANDS:
+              </h5>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                    !login: [+35 Points per day]
+                  </button>
+                </h2>
+                <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!login</code> akan menambahkan <code>+35 point</code> setiap 1 hari sekali
+                    <br>
+                    [🇺🇸] <code>!login</code> will add <code>+35 points</code> every 1 day
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                    !exp: [Check Experience Points]
+                  </button>
+                </h2>
+                <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!exp</code> Mengecek total experience point mu
+                    <br>
+                    [🇺🇸] <code>!exp</code> Checking total experience points
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh6">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                    !socials: [GitHub Link]
+                  </button>
+                </h2>
+                <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!socials</code> Kirim link github ke chat
+                    <br>
+                    [🇺🇸] <code>!socials</code> Sending github link to chat
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh7">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                    !discord: [Discord Link]
+                  </button>
+                </h2>
+                <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!discord</code> Kirim link discord ke chat
+                    <br>
+                    [🇺🇸] <code>!discord</code> Sending discord link to chat
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh8">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                    !tutorial: [Tutorial Link]
+                  </button>
+                </h2>
+                <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!tutorial</code> Kirim link tutorial ke chat
+                    <br>
+                    [🇺🇸] <code>!tutorial</code> Sending tutorial link to chat
+                  </div>
+                </div>
+              </div>
+              <h5>
+                🎮 SHOP MENU (POINTS):
+              </h5>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh9">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                    🔨 Contoh/Example:
+                  </button>
+                </h2>
+                <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [🇮🇩] <code>!tts random</code> Halo, bang selamat siang!
+                    <br>
+                    [🇮🇩] <code>!bgcolor red</code> Wah selamat bang, semoga sehat selalu!
+                    <br>
+                    [🇮🇩] <code>!drop</code> kardus
+                    <br>
+                    [🇮🇩] <code>!akiko 25</code> Mana nih katanya mau main
+                    <br>
+                    [🇮🇩] <code>!vote</code> kanan
+                    <br>
+                    <br>
+                    [🇺🇸] <code>!tts random</code> Hello, good afternoon sir!
+                    <br>
+                    [🇺🇸] <code>!textcolor blue</code> Congrats i hope you doing well!
+                    <br>
+                    [🇺🇸] <code>!drop</code> box
+                    <br>
+                    [🇺🇸] <code>!akiko 25</code> Mana nih katanya mau main
+                    <br>
+                    [🇺🇸] <code>!vote</code> right
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh10">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                    !bgcolor "Text" (20P): [set bg Color]
+                  </button>
+                </h2>
+                <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    🔺1 Chat Only Per Message🔺
+                    <br>
+                    [🇮🇩] <code>!bgcolor red</code> Wah selamat bang, semoga sehat selalu!
+                    <br>
+                    [🇺🇸] <code>!bgcolor red</code> Congrats i hope you doing well!
+                    <br>
+                    <br>
+                    Variant:
+                    <br>
+                    <code>!bgcolor red</code>
+                    <br>
+                    <code>!bgcolor blue</code>
+                    <br>
+                    <code>!bgcolor green</code>
+                    <br>
+                    <code>!bgcolor yellow</code>
+                    <br>
+                    <code>!bgcolor pink</code>
+                    <br>
+                    <code>!bgcolor orange</code>
+                    <br>
+                    <code>!bgcolor black</code>
+                    <br>
+                    <code>!bgcolor white</code>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh11">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                    !textcolor "Text" (20P): [set Text Color]
+                  </button>
+                </h2>
+                <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    🔺1 Chat Only Per Message🔺
+                    <br>
+                    [🇮🇩] <code>!textcolor red</code> Ini bang cara mainnya
+                    <br>
+                    [🇺🇸] <code>!textcolor red</code> This is how you play sir
+                    <br>
+                    <br>
+                    Variant:
+                    <br>
+                    <code>!textcolor red</code>
+                    <br>
+                    <code>!textcolor blue</code>
+                    <br>
+                    <code>!textcolor green</code>
+                    <br>
+                    <code>!textcolor yellow</code>
+                    <br>
+                    <code>!textcolor pink</code>
+                    <br>
+                    <code>!textcolor orange</code>
+                    <br>
+                    <code>!textcolor black</code>
+                    <br>
+                    <code>!textcolor white</code>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh12">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                    !bgtextcolor "Text" (40P): [set bg & Text Color]
+                  </button>
+                </h2>
+                <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    🔺1 Chat Only Per Message🔺
+                    <br>
+                    [🇮🇩] <code>!bgtextcolor red blue</code> Ini bang cara mainnya
+                    <br>
+                    [🇺🇸] <code>!bgtextcolor red blue</code> This is how you play sir
+                    <br>
+                    <br>
+                    Variant:
+                    <br>
+                    <code>!bgtextcolor red</code>
+                    <br>
+                    <code>!bgtextcolor blue</code>
+                    <br>
+                    <code>!bgtextcolor green</code>
+                    <br>
+                    <code>!bgtextcolor yellow</code>
+                    <br>
+                    <code>!bgtextcolor pink</code>
+                    <br>
+                    <code>!bgtextcolor orange</code>
+                    <br>
+                    <code>!bgtextcolor black</code>
+                    <br>
+                    <code>!bgtextcolor white</code>
+                  </div>
+                </div>
+              </div>
+              <h5>
+                🎮 SHOP MENU (POINTS):
+              </h5>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh13">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                    !particle "var_particle" (30P): [Add particle]
+                  </button>
+                </h2>
+                <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    <br>
+                    [🇮🇩] <code>!particle firework</code> Kasih Partikel di depan camera
+                    <br>
+                    [🇺🇸] <code>!particle firework</code> Give Particles in front of camera
+                    <br>
+                    <br>
+                    Variant:
+                    <br>
+                    <code>!particle random</code>
+                    <br>
+                    <code>!particle firework</code>
+                    <br>
+                    <code>!particle wind</code>
+                    <br>
+                    <code>!particle angryface</code>
+                    <br>
+                    <code>!particle happy</code>
+                    <br>
+                    <code>!particle sad</code>
+                    <br>
+                    <code>!particle blink</code>
+                    <br>
+                    <code>!particle confused</code>
+                    <br>
+                    <code>!particle gloomy</code>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh14">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                    !item "var_item" (80P): [Spawn item front Player]
+                  </button>
+                </h2>
+                <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh15">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc15" aria-expanded="false" aria-controls="fc15">
+                    !drop "var_item" (80P): [Drop item above Player]
+                  </button>
+                </h2>
+                <div id="fc15" class="accordion-collapse collapse" aria-labelledby="fh15" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh16">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc16" aria-expanded="false" aria-controls="fc16">
+                    !sound "Text" (150P): [Random notification]
+                  </button>
+                </h2>
+                <div id="fc16" class="accordion-collapse collapse" aria-labelledby="fh16" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh17">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc17" aria-expanded="false" aria-controls="fc17">
+                    !tts "Text" (200P): [Text to speech]
+                  </button>
+                </h2>
+                <div id="fc17" class="accordion-collapse collapse" aria-labelledby="fh17" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh18">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc18" aria-expanded="false" aria-controls="fc18">
+                    !vote "Text" + "Text" (500P): [2 Youtube Vote]
+                  </button>
+                </h2>
+                <div id="fc18" class="accordion-collapse collapse" aria-labelledby="fh18" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh19">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc19" aria-expanded="false" aria-controls="fc19">
+                    !akiko "Text" (1000P): [Chat with Akiko]
+                  </button>
+                </h2>
+                <div id="fc19" class="accordion-collapse collapse" aria-labelledby="fh19" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh20">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc20" aria-expanded="false" aria-controls="fc20">
+                    !call "Text" (1000P): [Call Naufal phone]
+                  </button>
+                </h2>
+                <div id="fc20" class="accordion-collapse collapse" aria-labelledby="fh20" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <h5>
+                🎉 EVENT:
+              </h5>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh21">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc21" aria-expanded="false" aria-controls="fc21">
+                    !akiko "Point" "Text" (5P): [Higher priority]
+                  </button>
+                </h2>
+                <div id="fc21" class="accordion-collapse collapse" aria-labelledby="fh21" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh22">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc22" aria-expanded="false" aria-controls="fc22">
+                    !paper (80P): [Guidance document]
+                  </button>
+                </h2>
+                <div id="fc22" class="accordion-collapse collapse" aria-labelledby="fh22" data-bs-parent="#af">
+                  <div class="accordion-body">
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh23">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc23" aria-expanded="false" aria-controls="fc23">
+                    !join (80P): [Join game event]
+                  </button>
+                </h2>
+                <div id="fc23" class="accordion-collapse collapse" aria-labelledby="fh23" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh24">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc24" aria-expanded="false" aria-controls="fc24">
+                    !vote "Text" -... (80P): [Voting Event]
+                  </button>
+                </h2>
+                <div id="fc24" class="accordion-collapse collapse" aria-labelledby="fh24" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <h5>
+                🍿 ABOUT ME:
+              </h5>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh25">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc25" aria-expanded="false" aria-controls="fc25">
+                    Lore:
+                  </button>
+                </h2>
+                <div id="fc25" class="accordion-collapse collapse" aria-labelledby="fh25" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    [ID] Naufal Afif seorang animator & game dev, mahasiswa biasa yang suka livestreaming produktif dan sering ngantuk karena begadang.
+
+                    [EN] Naufal Afif is an animator & game dev, a regular college student streaming productive stuff and often falls asleep due to sleep deprivation.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh26">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc26" aria-expanded="false" aria-controls="fc26">
+                    7+ years experience Animation
+                  </button>
+                </h2>
+                <div id="fc26" class="accordion-collapse collapse" aria-labelledby="fh26" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh27">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc27" aria-expanded="false" aria-controls="fc27">
+                    3+ years experience Python/GDScript
+                  </button>
+                </h2>
+                <div id="fc27" class="accordion-collapse collapse" aria-labelledby="fh27" data-bs-parent="#af">
+                  <div class="accordion-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh28">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc28" aria-expanded="false" aria-controls="fc28">
+                    CONTACT:
+                  </button>
+                </h2>
+                <div id="fc28" class="accordion-collapse collapse" aria-labelledby="fh28" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    📲 DM Discord - @naufalafif2015
+                    💬 Discord: https://discord.gg/7wzuknT 
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh29">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc29" aria-expanded="false" aria-controls="fc29">
+                    SOCIALS:
+                  </button>
+                </h2>
+                <div id="fc29" class="accordion-collapse collapse" aria-labelledby="fh29" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    📂 GitHub: https://github.com/naufalafif2015 
+                    📸 IG: https://www.instagram.com/naufalafif2015/ 
+                    🎥 TikTok: https://www.tiktok.com/@naufalafif2015 
+                    🐦 Twitter: https://twitter.com/naufalafif2015 
+                    ⭐ Youtube: https://www.youtube.com/@naufalafif2015 
+                    🌟 2nd Youtube: https://www.youtube.com/@NaufalStreaming2015 
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh30">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc30" aria-expanded="false" aria-controls="fc30">
+                    CREDITS:
+                  </button>
+                </h2>
+                <div id="fc30" class="accordion-collapse collapse" aria-labelledby="fh30" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    overlay/models all by me (Blender, Godot 4, Aseprite, Vscode)
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fh31">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc31" aria-expanded="false" aria-controls="fc31">
+                    FAQ:
+                  </button>
+                </h2>
+                <div id="fc31" class="accordion-collapse collapse" aria-labelledby="fh31" data-bs-parent="#af">
+                  <div class="accordion-body">
+                    Uh... Bye ツ
                   </div>
                 </div>
               </div>
@@ -384,10 +986,10 @@
         <div class="panel">
           <figure class="text-center">
             <blockquote class="blockquote">
-              <p>A well-known quote, contained in a blockquote element.</p>
+              <p>Jangan pernah berhenti belajar, karena hidup adalah perjalanan yang tak pernah berakhir.</p>
             </blockquote>
             <figcaption class="blockquote-footer">
-              Someone famous in <cite title="Source Title">Source Title</cite>
+              Kata-kata hari ini <cite title="Source Title">Timpa Text</cite>
             </figcaption>
           </figure>
         </div>

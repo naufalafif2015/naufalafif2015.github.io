@@ -1,5 +1,6 @@
 # naufalafif2015.github.io
 Website buat Naufalafif2015
+WARNING: Assets tidak boleh di distribusikan ke orang lain
 
 - Lihat disini: https://naufalafif2015.github.io
 - Akiko Schedule: https://naufalafif2015.github.io/akiko-schedule.html
@@ -11,7 +12,7 @@ Youtube Description:
 🎮 SHOP MENU (POINTS):
 | +5 point per chat
 | +40 point per donation (YT/Trakteer)
-| Spam = 30‑min timeout + Roll back Points to 0
+| Spam = 30 min timeout + Roll back Points to 0
 🎁 Trakteer: https://trakteer.id/naufalafif2015 
 
 🔨 Contoh/Example:
@@ -19,7 +20,7 @@ Youtube Description:
 [EN] !tts Hello, good afternoon sir!
 
 🛠️ HELP COMMANDS:
-| !login: [+20 Points per day]
+| !login: [+35 Points per day]
 | !exp: [Check Experience Points]
 | !socials: [GitHub Link]
 | !discord: [Discord Link]
