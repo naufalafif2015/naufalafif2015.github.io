@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Basic styling for our panels */
+body {
+  background-color: #ddd;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.123);
+}
+
+header {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #f7ecec;
+  width: 100%;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  background: #7271a8; /* If you want a different background, adjust here */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.navbar {
+  background: transparent; /* Let header control the color, or set a color here if needed */
+}
+/* Skipping some area */
+.container-big-skip {
+  height: 250px;
+  }
+
+.container-medium-skip {
+height: 90px;
+}
+
+.container-small-skip {
+height: 30px;
+}
+
+/* Art Panel Area */
+.art-area {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  max-height: 80vh;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.art-area-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: width 0.2s, height 0.2s;
+  /* fallback aspect ratio */
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.ratio-1-1 {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 80vh; /* Prevents stretching too wide */
+  height: auto;
+  max-height: 100%;
+}
+
+.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: calc(80vh * 16 / 9); /* Prevents stretching too wide */
+  height: auto;
+  max-height: 100%;
+}
+
+.ratio-9-16 {
+  aspect-ratio: 9 / 16;
+  height: 100%;
+  max-height: 80vh;
+  width: auto;
+  max-width: 100vw;
+}
+
+.art-area-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Left Panel side */
+.panel-left {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.123);
+}
+
+.schedule-panel {
+  padding: 10px;
+  margin-top: 10px;
+}
+/* Simple settings panel styling */
+.settings-panel {
+  border: 1px solid #ddd;
+  padding: 15px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.123);
+}
+
+/* Custom nav-link colors */
+.nav-link {
+  color: #f7ecec;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link h5 {
+  color: #a5a3ff;
+}
+
+/* Light mode nav-link colors */
+.light-mode .nav-link {
+  color: #f7ecec;
+}
+
+.light-mode .nav-link:hover {
+  color: #e5ff00;
+}
+
+.light-mode .nav-link.active {
+  color: #a5a3ff;
+}
+
+/* Dark mode nav-link colors */
+.dark-mode .nav-link {
+  color: #f7ecec;
+}
+
+.dark-mode .nav-link:hover {
+  color: #e5ff00;
+}
+
+.dark-mode .nav-link.active {
+  color: #a5a3ff;
+}
