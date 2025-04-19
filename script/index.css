@@ -151,6 +151,11 @@ header {
   top: 0;
 }
 
+/* === TOOLTIP === */
+.custom-tooltip {
+  --bs-tooltip-bg: #3c3c66;
+}
+
 /* === TINY TEXT (Mobile Mode) === */
 .tiny-text {
   font-size: var(--tiny-text-scale) !important;
@@ -160,6 +165,7 @@ header {
   --party-btn-hover-translate-y: -10px;
   --party-video-translate-x: 10px;
   --party-video-translate-y: 10px;
+  --bubble-hover-translate: 45px;
 }
 
 .tiny-text * {
@@ -177,9 +183,51 @@ header {
   min-height: var(--icon-talk-size-mobile);
 }
 
-/* === TOOLTIP === */
-.custom-tooltip {
-  --bs-tooltip-bg: #3c3c66;
+/* === OFFCANVAS (SIDEBAR) === */
+@media (max-width: 991.98px) {
+  .ellipsis {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;      /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90vw;
+    white-space: normal;         /* Allow wrapping */
+  }
+  .offcanvas {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+  }
+  .offcanvas.offcanvas-start {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: 30vh;
+    width: auto !important;
+    min-width: unset !important;
+    max-width: 90vw;
+  }
+  .tiny-text #mobileFunction {
+    display: none !important;
+  }
+  #profile-icon-akiko {
+    text-align: center !important;
+  }
+  #profile-icon-naufal {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .tiny-text #mobileFunction {
+    display: block !important;
+  }
+  #profile-icon-akiko {
+    text-align: left !important;
+  }
+  #profile-icon-naufal {
+    text-align: right !important;
+  }
 }
 
 /* === ICON === */
@@ -220,20 +268,6 @@ header {
 .container-big-skip { height: var(--container-big-skip); }
 .container-medium-skip { height: var(--container-medium-skip); }
 .container-small-skip { height: var(--container-small-skip); }
-
-/* === OFFCANVAS (SIDEBAR) === */
-@media (max-width: 991.98px) {
-  .offcanvas {
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
-    color: #fff;
-  }
-}
-@media (min-width: 992px) {
-  .offcanvas {
-    background: none !important;
-    color: inherit !important;
-  }
-}
 
 /* === NAV LINKS === */
 .nav-link {
@@ -571,7 +605,6 @@ body.dark-mode header a:hover {
 .dark-mode .text-lead {
   color: var(--text-lead-dark);
 }
-
 
 /* === ACCORDION === */
 .accordion {

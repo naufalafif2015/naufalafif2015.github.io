@@ -1883,8 +1883,8 @@ function updateOtherCards() {
             </div>
             <div class="card-body light-mode">
               <p class="card-text"><a class="btn btn-primary titles">${data.titles}</a></p>
-              <p class="card-text description">${data.description}</p>
-              <div class="card-footer" data-date="${data.time}">
+              <p class="card-text description ellipsis">${data.description}</p>
+              <div class="card-footer" data-date="${data.time}" id="mobileFunction">
                 <small class="light-mode text-lead time">
                   <span class="days-since">${data.time}</span>
                 </small>
@@ -1912,8 +1912,8 @@ function updateOtherCards() {
               </div>
               <div class="card-body light-mode">
                 <p class="card-text"><a class="btn btn-primary titles">${data.titles}</a></p>
-                <p class="card-text description">${data.description}</p>
-                <div class="card-footer" data-date="${data.time}">
+                <p class="card-text description ellipsis">${data.description}</p>
+                <div class="card-footer" data-date="${data.time}" id="mobileFunction">
                   <small class="light-mode text-lead time">
                     <span class="days-since">${data.time}</span>
                   </small>
@@ -2142,35 +2142,6 @@ function initVideos() {
     });
 }
 
-// Setup scroll hover effects using IntersectionObserver
-function setupScrollHoverForAll() {
-    const hoverElements = document.querySelectorAll('[data-hoverable]');
-    hoverElements.forEach(hoverElement => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    hoverElement.classList.add('hover');
-                    // If this is a .card, apply random rotation
-                    if (hoverElement.classList.contains('card')) {
-                        const rotation = Math.random() * 20 - 10;
-                        hoverElement.style.transform = `scale(1.05)`; //rotate(${rotation}deg)
-                    }
-                } else {
-                    hoverElement.classList.remove('hover');
-                    // Reset transform if it's a .card
-                    if (hoverElement.classList.contains('card')) {
-                        hoverElement.style.transform = 'scale(1)'; //rotate(0deg)
-                    }
-                }
-            });
-        }, { 
-            rootMargin: "-40% 0px -40% 0px",
-            threshold: 0
-        });
-        observer.observe(hoverElement);
-    });
-}
-
 // Initialize parallax background container and update functions
 function initParallax() {
     const parallax = document.querySelector('.parallax');
@@ -2284,6 +2255,41 @@ function initCardHoverEffects() {
         card.addEventListener('touchend', function() {
             this.style.transform = 'scale(1) rotate(0deg)';
         }, {passive: true});
+    });
+}
+
+// Setup scroll hover effects using IntersectionObserver
+function setupScrollHoverForAll() {
+    const hoverElements = document.querySelectorAll('[data-hoverable]');
+    hoverElements.forEach(hoverElement => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    hoverElement.classList.add('hover');
+                    // If this is a .card, apply random rotation
+                    if (hoverElement.classList.contains('card')) {
+                        const rotation = Math.random() * 20 - 10;
+                        hoverElement.style.transform = `scale(1.05)`; //rotate(${rotation}deg)
+                    }
+                    if (hoverElement.classList.contains('bubble-chat')) {
+                        hoverElement.style.transform = `translateX(var(--bubble-hover-translate))`;
+                    }
+                } else {
+                    hoverElement.classList.remove('hover');
+                    // Reset transform if it's a .card
+                    if (hoverElement.classList.contains('card')) {
+                        hoverElement.style.transform = 'scale(1)'; //rotate(0deg)
+                    }
+                    if (hoverElement.classList.contains('bubble-chat')) {
+                        hoverElement.style.transform = `translateX(0)`;
+                    }
+                }
+            });
+        }, { 
+            rootMargin: "-40% 0px -40% 0px",
+            threshold: 0
+        });
+        observer.observe(hoverElement);
     });
 }
 
@@ -2409,16 +2415,35 @@ function setRandomQuote() {
     if (authorElem) authorElem.textContent = quote.author;
 }
 
-// Check if Bootstrap Mobile (viewport width less than 768)
-function isBootstrapMobile() {
-    return window.innerWidth < 768;
-}
+function mobileResizeFunction() {
+    const scroll1 = document.getElementById('scroll-1');
+    const elem = document.getElementById('mobileFunction');
+    const descs = document.querySelectorAll('.mobileFunctionDesc');
+    const row = document.getElementById('profile-row');
+    const colLeft = document.getElementById('profile-col-left');
+    const colRight = document.getElementById('profile-icon-naufal');
 
-function resizeTextForMobile() {
     if (window.innerWidth < 768) {
         document.body.classList.add('tiny-text');
+        scroll1.classList.remove('container-big-skip');
+        scroll1.classList.add('container-small-skip');
+        elem.style.display = 'none';
+        descs.forEach(desc => desc.classList.add('ellipsis'));
+        // Swap columns: move colRight before colLeft
+        if (row && colLeft && colRight && row.firstElementChild !== colRight) {
+            row.insertBefore(colRight, colLeft);
+        }
+        setupScrollHoverForAll();
     } else {
         document.body.classList.remove('tiny-text');
+        scroll1.classList.remove('container-small-skip');
+        scroll1.classList.add('container-big-skip');
+        elem.style.display = '';
+        descs.forEach(desc => desc.classList.remove('ellipsis'));
+        // Restore original order: move colLeft before colRight
+        if (row && colLeft && colRight && row.firstElementChild !== colLeft) {
+            row.insertBefore(colLeft, colRight);
+        }
     }
 }
 
@@ -2443,18 +2468,7 @@ function initApp() {
     moreAboutAkiko();
     updateAllDaysSince();
     setInterval(updateAllDaysSince, 60000);
-    resizeTextForMobile();
-
-    // Setup hover effects for mobile
-    if (isBootstrapMobile()) {
-        setupScrollHoverForAll();
-    }
-    window.addEventListener('resize', () => {
-        resizeTextForMobile();
-        if (isBootstrapMobile()) {
-            setupScrollHoverForAll();
-        }
-    });
+    mobileResizeFunction();
 }
 
 // Run the app once the DOM is fully loaded
