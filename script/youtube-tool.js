@@ -89,24 +89,24 @@ function setupResolutionChangeHandler() {
     resolutionSelect.addEventListener("change", function () {
         const resolution = this.value;
         const artAreaInner = document.getElementById("art-area-inner");
-        const schedulePanel = document.getElementById("schedule-panel");
-        if (!artAreaInner || !schedulePanel) return;
-
+        if (!artAreaInner) return;
+        
         // Remove previous aspect-ratio classes
         artAreaInner.classList.remove("ratio-1-1", "ratio-16-9", "ratio-9-16");
-
+        
         // Set aspect ratio via class
         if (resolution === "1:1") {
             artAreaInner.classList.add("ratio-1-1");
-            schedulePanel.classList.remove("mt-2");
         } else if (resolution === "16:9") {
             artAreaInner.classList.add("ratio-16-9");
-            schedulePanel.classList.add("mt-2");
         } else if (resolution === "9:16") {
             artAreaInner.classList.add("ratio-9-16");
-            schedulePanel.classList.add("mt-2");
         }
     });
+
+    // Set default to 1:1 and trigger the change event on first load
+    resolutionSelect.value = "1:1";
+    resolutionSelect.dispatchEvent(new Event("change"));
 }
 
 function initTheme() {
@@ -219,12 +219,12 @@ function getConfigData() {
     // Replace this with your actual config data collecting logic
     // Example: Collecting from global variables or form fields
     const config = {
-      title: document.getElementById('title-input')?.value || '',
-      description: document.getElementById('title-desc-input')?.value || '',
-      // Add more fields as needed
+    title: document.getElementById('title-input')?.value || '',
+    description: document.getElementById('title-desc-input')?.value || '',
+    // Add more fields as needed
     };
     return config;
-  }
+}
   
 function downloadConfigFile() {
     const config = getConfigData();
@@ -248,6 +248,119 @@ function initDownloadSettingsButton() {
     }
 }
 
+// Add this function to handle art download
+function downloadArtAsPNG(format = 'png', copyToClipboard = false) {
+    const artArea = document.getElementById('art-area-inner');
+    
+    // Add crossOrigin attribute and handle custom images
+    const images = artArea.getElementsByTagName('img');
+    Array.from(images).forEach(img => {
+        // If image is a custom upload (data URL)
+        if (img.src.startsWith('data:')) {
+            // Keep as is since it's already a data URL
+            return;
+        }
+        
+        // Convert file paths to data URLs for local files
+        if (img.src.startsWith('file://')) {
+            const reader = new FileReader();
+            const imgElement = new Image();
+            imgElement.src = img.src;
+            
+            imgElement.onload = () => {
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(imgElement);
+            };
+        } else { // Handle non-local images
+            const newImg = new Image();
+            newImg.crossOrigin = 'Anonymous';
+            newImg.src = img.src;
+            newImg.onload = () => {
+                img.src = newImg.src;
+            };
+        }
+    });
+
+    // Wait for all images to load before capturing
+    const imgPromises = Array.from(images).map(img => {
+        return new Promise((resolve) => {
+            if (img.complete) {
+                resolve();
+            } else {
+                img.onload = resolve;
+                img.onerror = () => resolve(); // Resolve even on error to prevent infinite wait
+            }
+        });
+    });
+
+    Promise.all(imgPromises).then(() => {
+        html2canvas(artArea, {
+            scale: 2,
+            backgroundColor: null,
+            useCORS: true,
+            allowTaint: false,
+            onclone: function(doc) {
+                const clonedImages = doc.getElementsByTagName('img');
+                Array.from(clonedImages).forEach(img => {
+                    if (!img.src.includes('data:')) {
+                        img.crossOrigin = 'Anonymous';
+                    }
+                });
+            }
+        }).then(canvas => {
+            if (copyToClipboard && navigator.clipboard && window.ClipboardItem) {
+                canvas.toBlob(blob => {
+                    if (blob) {
+                        const item = new ClipboardItem({ [blob.type]: blob });
+                        navigator.clipboard.write([item]).then(() => {
+                            alert('Image copied to clipboard!');
+                        }).catch(err => {
+                            alert('Failed to copy image to clipboard.');
+                        });
+                    }
+                }, 'image/png');
+            } else {
+                const link = document.createElement('a');
+                link.download = `schedule-art.${format}`;
+                try {
+                    const mimeType = format === 'png' ? 'image/png' : 'image/jpeg';
+                    link.href = canvas.toDataURL(mimeType);
+                    link.click();
+                } catch (error) {
+                    console.error('Error creating image:', error);
+                    alert('Unable to download image. Please ensure all images are properly loaded and accessible.');
+                }
+            }
+        }).catch(error => {
+            console.error('Error capturing canvas:', error);
+            alert('Error capturing the art area. Please try again.');
+        });
+    }).catch(error => {
+        console.error('Error waiting for images:', error);
+        alert('Error waiting for images to load. Please try again.');
+    });
+}
+
+function setupDownloadArtDropdown() {
+    const dropdown = document.getElementById('download-art');
+    const menu = dropdown?.nextElementSibling;
+    if (menu) {
+        menu.addEventListener('click', function(e) {
+            const target = e.target.closest('a[data-format]');
+            if (!target) return;
+            e.preventDefault();
+            const format = target.getAttribute('data-format');
+            if (format === 'png' || format === 'jpg') {
+                downloadArtAsPNG(format);
+            } else if (format === 'copy') {
+                downloadArtAsPNG('png', true);
+            }
+        });
+    }
+}
+
 // Overall Initialization Function
 function initApp() {
     initTheme();
@@ -256,6 +369,7 @@ function initApp() {
     setupAddSocialMediaRow();
     setupResolutionChangeHandler();
     initDownloadSettingsButton();
+    setupDownloadArtDropdown();
 }
 
 // Run the app once the DOM is fully loaded

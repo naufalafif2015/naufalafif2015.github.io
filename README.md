@@ -2,16 +2,20 @@
 
 Website buat Naufalafif2015
 
-WARNING: Assets dan code tidak boleh di distribusikan untuk keperluan orang lain. Seperti yang sudah tertera disini: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt
+⚠️ WARNING ⚠️
 
-WARNING: Assets or code cannot be distributed for others works. Like what stated in here: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt
+YOU ARE NOT SUPPOSED TO BE HERE. The Website Is Right Here Gentleman: https://naufalafif2015.github.io
 
-- Lihat disini: https://naufalafif2015.github.io
-- Akiko Schedule: https://naufalafif2015.github.io/akiko-schedule.html
-- Tutorial Schedule: https://naufalafif2015.github.io/akiko-schedule.html
+This is My Private Assets and Code, So it cannot be distributed for Others Works or even Commercial Usage As Stated Here: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt
+
+Except Music, I do not own music for this website as it is not for monetized and for entertainment purpose. Credits due to: ISQ - VOID (SUPER SLOWED).
+
+- Main Website: https://naufalafif2015.github.io
+- Youtube Tools: https://naufalafif2015.github.io/akiko-schedule.html
+- Tutorial Schedule: WIP
 
 
-Youtube Description:
+Naufalstreaming2015 Description:
 
 #Naufalstreaming2018 #Naufalafif2015
 
@@ -155,42 +159,3 @@ CREDITS: overlay/models all by me
 
 
 FAQ: Uh... Bye ツ
-
-
-
-
-Hi chat gpt, i want to make some schedule with html, js, and css. (You can use Bootstraps for it) i want to make it something like this:
-
-Left Panel is the art and schedule of it
-
-Right Panel is the settings of all the settings:
-resolution, (Has 2 Options. Option 1 Resolution for the panel is 1:1 Box with the panel of the settings in the right side of the left panel, Option 2 Resolution is 16:9 Box with the panel of the settings in the bottom side of the panel [The art and schedule is large sizing with the settings panel gone into below of it])
-
-title (Has custom Box Text for user to input, Position Checkbox has 2 options: above the character panel or above the schedule panel)
-title_description (Mini description below the title)
-
-schedule_position, (has 2 options, Option 1: schedule right side of the art, Option 2: left side of the art)
-
-title_text_color (Custom color box)
-title_text_description_color (Custom color box)
-schedule_text_color (Custom color box)
-schedule_title_text_color (Custom color box)
-schedule_description_text_color (Custom color box)
-
-Monday to Sunday:
-  - Has 3 Option. Option 1 Only 1 Letter (M, T, W, ...), Option 2 Only 3 Letter (Mon, Tue, Wed), Option 3 All of the letter (Monday, Tuesday, Wednessday)
-  - Time input from Monday to Sunday (Text input box)
-  - Icon input from Monday to Sunday (Image input box)
-  - Custom background from Monday to Sunday (Image input box)
-  - Checkbox if no schedule from Monday to Sunday (Maybe if Input Text is None, then it will make the schedule darker)
-
-background_img (Custom image input box)
-character_img (Custom image input box)
-foreground_img (Custom image input box)
-
-social_media_list (User can add many list of the social media)
-  - social_media_position (Has 4 Position, below right, below left, above right, above left)
-  - text_media (Text input box)
-  - icon_media (Image input box)
-  
-maybe you can add anything else that fits for vtuber schedule. Please can you make it?

@@ -141,11 +141,11 @@ const dataContact = {
 
 const dataOther = {
     1: {
-        titles: "Schedule Helper",
-        description: "You can use this to create your own schedule",
-        time: "2025-02-04T17:50:00",
+        titles: "Youtube Tool",
+        description: "You can use this to create your own schedule or even Youtube Thumbnail Videos",
+        time: "2025-04-20T17:50:00",
         image: "static/images/index/experience/schedule1.jpg",
-        link: "akiko-schedule.html"
+        link: "youtube-tool.html"
     },
     2: {
         titles: "Sumireko Tactical Dream",
@@ -2142,11 +2142,6 @@ function initVideos() {
     });
 }
 
-// Check if Bootstrap Mobile (viewport width less than 768)
-function isBootstrapMobile() {
-    return window.innerWidth < 768;
-}
-
 // Setup scroll hover effects using IntersectionObserver
 function setupScrollHoverForAll() {
     const hoverElements = document.querySelectorAll('[data-hoverable]');
@@ -2158,13 +2153,13 @@ function setupScrollHoverForAll() {
                     // If this is a .card, apply random rotation
                     if (hoverElement.classList.contains('card')) {
                         const rotation = Math.random() * 20 - 10;
-                        hoverElement.style.transform = `scale(1.05) rotate(${rotation}deg)`;
+                        hoverElement.style.transform = `scale(1.05)`; //rotate(${rotation}deg)
                     }
                 } else {
                     hoverElement.classList.remove('hover');
                     // Reset transform if it's a .card
                     if (hoverElement.classList.contains('card')) {
-                        hoverElement.style.transform = 'scale(1) rotate(0deg)';
+                        hoverElement.style.transform = 'scale(1)'; //rotate(0deg)
                     }
                 }
             });
@@ -2336,15 +2331,15 @@ function showNotification(message) {
 function initCopyFunctionality() {
     const kbdElements = document.querySelectorAll('kbd');
     kbdElements.forEach(kbd => {
-      const copyTextValue = kbd.getAttribute('data-copy-text');
-      kbd.addEventListener('click', function() {
+    const copyTextValue = kbd.getAttribute('data-copy-text');
+    kbd.addEventListener('click', function() {
         if (copyTextValue) {
-          copyText(copyTextValue); // Ensure copyText is defined elsewhere
-          showNotification(`Text copied to clipboard: ${copyTextValue}`); // Display copied text in the notification
+        copyText(copyTextValue); // Ensure copyText is defined elsewhere
+        showNotification(`Text copied to clipboard: ${copyTextValue}`); // Display copied text in the notification
         }
-      });
     });
-  }
+    });
+}
 
 // Function for animate progress bars
 function animateProgressBarsOnScroll() {
@@ -2412,7 +2407,20 @@ function setRandomQuote() {
     const authorElem = document.querySelector('.blockquote-footer cite');
     if (quoteElem) quoteElem.textContent = quote.text;
     if (authorElem) authorElem.textContent = quote.author;
-  }
+}
+
+// Check if Bootstrap Mobile (viewport width less than 768)
+function isBootstrapMobile() {
+    return window.innerWidth < 768;
+}
+
+function resizeTextForMobile() {
+    if (window.innerWidth < 768) {
+        document.body.classList.add('tiny-text');
+    } else {
+        document.body.classList.remove('tiny-text');
+    }
+}
 
 // Overall Initialization Function
 function initApp() {
@@ -2435,12 +2443,14 @@ function initApp() {
     moreAboutAkiko();
     updateAllDaysSince();
     setInterval(updateAllDaysSince, 60000);
+    resizeTextForMobile();
 
     // Setup hover effects for mobile
     if (isBootstrapMobile()) {
         setupScrollHoverForAll();
     }
     window.addEventListener('resize', () => {
+        resizeTextForMobile();
         if (isBootstrapMobile()) {
             setupScrollHoverForAll();
         }
